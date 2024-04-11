@@ -42,15 +42,13 @@ public class ChallengeApplication {
 			};
 	}
 	
-	
-	//*@Bean
-	//@Order(value = 1)
-	//@Transactional
-	//public CommandLineRunner testeBuscaCliente(TesteService testeService) {
-		
-		//return (args) -> {
-			//testeService.testarBuscaCliente();
-		//};
-	//}
-	
+	@Bean
+	@Order(value = 1)
+	public CommandLineRunner buscarUsuarioPorEmail(UsuarioRepository usuarioRepository) {
+	    return (args) -> {
+	        Usuario usuarioEncontrado = usuarioRepository.findByEmail("jaisy@gmail.com");
+	        System.out.println("Usuário encontrado por e-mail: " + usuarioEncontrado);
+	    };
+	}
+
 }
