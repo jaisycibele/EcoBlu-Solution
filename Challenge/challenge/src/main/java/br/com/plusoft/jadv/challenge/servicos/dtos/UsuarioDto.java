@@ -19,11 +19,18 @@ public class UsuarioDto {
     @NotBlank(message="Chave Google Ads deve ser informada")
     private String chaveGoogleAds;
 
-    // Getters e setters
+    // Construtor padrão sem argumentos
+    public UsuarioDto() {
+    }
 
+    // Construtor com argumentos para converter um objeto Usuario em UsuarioDto
     public UsuarioDto(Usuario novoUsuario) {
-		// TODO Auto-generated constructor stub
-	}
+        this.nome = novoUsuario.getNome();
+        this.email = novoUsuario.getEmail();
+        // Você pode definir a senha como null ou vazia, dependendo dos requisitos
+        this.senha = "";
+        this.chaveGoogleAds = novoUsuario.getChaveGoogleAds();
+    }
 
 	public String getNome() {
         return nome;
