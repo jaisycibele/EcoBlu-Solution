@@ -27,7 +27,7 @@ public class UsuarioAPI {
 
     @PostMapping("/cadastrar")
     public ResponseEntity<UsuarioDto> cadastrarUsuario(@RequestBody UsuarioDto request) {
-        UsuarioDto novoUsuario = cadastrarUsuarioService.criarNovoUsuario(request.getNome(), request.getEmail(), request.getSenha(), request.ChaveGoogleAds());
+        UsuarioDto novoUsuario = cadastrarUsuarioService.criarNovoUsuario(request.getNome(), request.getEmail(), request.getSenha(), request.ChaveGoogleAds(), null);
         return ResponseEntity.status(HttpStatus.CREATED).body(novoUsuario);
     }
     

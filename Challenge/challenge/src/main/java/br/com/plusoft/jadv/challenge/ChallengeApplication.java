@@ -20,7 +20,7 @@ public class ChallengeApplication {
 	}
 	
 	@Bean
-	@Order(value = 2)
+	@Order(value = 1)
 	@Transactional
 	public CommandLineRunner teste(
 			UsuarioRepository usuarioRepository,
@@ -30,10 +30,10 @@ public class ChallengeApplication {
 		
 		return (args) -> {
 			Usuario usuario = new Usuario();
-			usuario.setNome("Rennan");
-			usuario.setEmail("rennan@gmail.com");
+			usuario.setNome("Jaisy");
+			usuario.setEmail("jaisy@gmail.com");
 			usuario.setSenha("123456");
-			usuario.setChaveGoogleAds("def123");
+			usuario.setChaveGoogleAds("chave123");
 			usuarioRepository.save(usuario);
 			
 			
@@ -43,7 +43,7 @@ public class ChallengeApplication {
 	}
 	
 	@Bean
-	@Order(value = 1)
+	@Order(value = 2)
 	public CommandLineRunner buscarUsuarioPorEmail(UsuarioRepository usuarioRepository) {
 	    return (args) -> {
 	        Usuario usuarioEncontrado = usuarioRepository.findByEmail("jaisy@gmail.com");
