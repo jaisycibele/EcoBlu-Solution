@@ -51,9 +51,9 @@ public class Anuncio {
     
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(
-            name = "USUARIO",
-            referencedColumnName = "ID_USUARIO",
-            foreignKey = @ForeignKey(name = "FK_USUARIO_ANUNCIO")
+            name = "ID_USUARIO",
+            referencedColumnName = "idUsuario",
+            foreignKey = @ForeignKey(name = "FK_ANUNCIO_USUARIO")
     )
     private Usuario usuario; 
 
