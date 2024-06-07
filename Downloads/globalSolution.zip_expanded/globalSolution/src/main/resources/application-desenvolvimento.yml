@@ -1,0 +1,15 @@
+# application-desenvolvimento.yml
+
+
+
+  datasource:
+    url: jdbc:mariadb://${DB_DESENV_SERVER}:${DB_DESENV_PORT:3306}/${DB_DESENV_NAME}?createDatabaseIfNotExist=true
+    username: ${DB_DESENV_USERNAME}
+    password: ${DB_DESENV_PASSWORD}
+    driver-class-name: org.mariadb.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    show-sql: true
